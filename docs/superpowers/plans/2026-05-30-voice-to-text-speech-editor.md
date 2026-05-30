@@ -1,5 +1,11 @@
 # Voice to Text Speech Editor Implementation Plan
 
+> ⚠️ **Historical note (corrected in v0.2):** This plan targets whisper.cpp for local
+> transcription. **whisper.cpp was never shipped** — it does not integrate on the
+> current toolchain. The product uses **Apple's Speech framework** behind the
+> `TranscriptionEngine` protocol; whisper remains a roadmap item. The whisper-specific
+> tasks below were not completed and are kept only for history.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Build a native macOS menu-bar app where holding ⌃ Right-Control records speech, transcribes it locally with whisper.cpp, runs an AI cleanup pass, pastes the result at the cursor, and also feeds a first-class Editor window with AI actions, history, and export.

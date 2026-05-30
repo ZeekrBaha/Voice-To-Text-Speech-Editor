@@ -9,7 +9,7 @@ struct AppSettingsTests {
         let s = AppSettings.default
         #expect(s.enhancementEnabled == true)
         #expect(s.aiProvider == .ollama)
-        #expect(s.modelName == "ggml-small.en")
+        #expect(s.ollamaModel == "qwen2.5:7b-instruct")
     }
     @Test("round-trips through Codable")
     func codable() throws {

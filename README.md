@@ -147,9 +147,8 @@ SpeechEditor/
 │   ├── AudioCapturing.swift       ← protocol + AudioBuffer
 │   └── AVAudioCaptureService.swift
 ├── Transcription/
-│   ├── TranscriptionEngine.swift  ← protocol
-│   ├── AppleSpeechEngine.swift    ← SFSpeechRecognizer impl
-│   └── ModelManager.swift         ← whisper.cpp model catalog (latent, see notes)
+│   ├── TranscriptionEngine.swift  ← protocol (the swap seam for a future engine)
+│   └── AppleSpeechEngine.swift    ← SFSpeechRecognizer impl (the v1 engine)
 ├── Enhancement/
 │   ├── TextEnhancer.swift         ← protocol + EditorAction
 │   ├── OllamaEnhancer.swift       ← local, default
@@ -247,7 +246,9 @@ The transcription, AI, and paste steps are **build-verified** in CI and exercise
 
 ## Implementation notes
 
-The original plan was to use **whisper.cpp** for local transcription. On the current toolchain (Xcode 26.5) it could not be integrated as a Swift Package Manager source dependency — tags ≤1.7.2 use unsafe build flags that Xcode rejects in app targets, 1.7.3/1.7.4 require a system-installed lib via pkg-config, and ≥1.7.5 dropped `Package.swift` entirely. Rather than block the MVP, transcription ships on **Apple's on-device Speech framework** behind the unchanged `TranscriptionEngine` protocol. Because that seam is narrow, whisper.cpp can be added later via a vendored `.xcframework` without touching the rest of the pipeline — the `ModelManager` type is already present for that path.
+**The v1 transcription engine is Apple's on-device Speech framework** — not whisper.cpp. The original plan called for whisper.cpp, but on the current toolchain (Xcode 26.5) it could not be integrated as a Swift Package Manager source dependency: tags ≤1.7.2 use unsafe build flags that Xcode rejects in app targets, 1.7.3/1.7.4 require a system-installed lib via pkg-config, and ≥1.7.5 dropped `Package.swift` entirely. Rather than block the product, transcription ships on Apple Speech behind the `TranscriptionEngine` protocol.
+
+A whisper.cpp backend remains a **roadmap item**, not a present feature: because the protocol seam is narrow, it can be added later via a vendored `.xcframework` and selected behind the same interface — without touching the rest of the pipeline. (The earlier `ModelManager` placeholder was removed in v0.2; it was dead code, and dead "offline model" UX made the app look more complete than it was.)
 
 See [docs/superpowers/specs/](docs/superpowers/specs/) for the design spec and [docs/superpowers/plans/](docs/superpowers/plans/) for the phased implementation plan this was built from.
 

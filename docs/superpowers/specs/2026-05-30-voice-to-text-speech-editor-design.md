@@ -1,5 +1,12 @@
 # Voice to Text Speech Editor — Design Spec
 
+> ⚠️ **Transcription note (corrected in v0.2):** This document describes whisper.cpp as
+> the local transcription engine. **whisper.cpp was never shipped** — it does not
+> integrate on the current toolchain. The product transcribes with **Apple's Speech
+> framework** behind the `TranscriptionEngine` protocol; whisper is a roadmap item, not
+> a present feature. References to whisper/`ModelManager` below are historical. See
+> `../specs/2026-05-30-voice-to-text-speech-editor-v0.2-design.md` for current state.
+
 **Date:** 2026-05-30
 **Status:** Approved (design v2)
 **Author:** Baha (with Claude Code)
