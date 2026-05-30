@@ -6,6 +6,8 @@
     <true/>
     <key>NSMicrophoneUsageDescription</key>
     <string>Speech Editor records your voice to transcribe it to text on-device.</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Speech Editor uses speech recognition to transcribe your dictation to text.</string>
     <key>CFBundleName</key>
     <string>SpeechEditor</string>
 </dict>
