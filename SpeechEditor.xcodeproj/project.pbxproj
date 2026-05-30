@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		029D3002383F68300321D4C5 /* EditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB91B3931261D3E31B2ED053 /* EditorToolbar.swift */; };
 		076EDC3ED53A3ED7981D471B /* FakeAudioCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472894BB7941F3651DAD5DBB /* FakeAudioCapture.swift */; };
 		0AE6D81AB84D54D39442A082 /* TextEnhancerContractTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6CFD6C7844E67944716A3B /* TextEnhancerContractTests.swift */; };
 		0ED7BFFA0B6DC2528CA0FBC5 /* TranscriptionEngineContractTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B935DF2B7845BF2C4FD92 /* TranscriptionEngineContractTests.swift */; };
@@ -20,6 +21,7 @@
 		39DD36FCA21A486DFE84B271 /* FakeOutputSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5EB47B1C0760BCA4B2223 /* FakeOutputSink.swift */; };
 		41DA99B6E86125395B561B5A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F9DFD651A4DCAE4C76221 /* Logger.swift */; };
 		49877B0FA3487A824FF12C30 /* OutputSinkContractTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592FEBE7BA2D162C16F4E457 /* OutputSinkContractTests.swift */; };
+		4E21F57D3B0E7DBFF71892F5 /* EditorWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC1366D5611F1DDD109A9F /* EditorWindow.swift */; };
 		54E7159B25EE573AE34D5669 /* OpenAIEnhancer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F429F260B5D02234680C9 /* OpenAIEnhancer.swift */; };
 		5895E6E3193FC9ED6BAC5C73 /* TranscriptionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E371C7D15FF09EE83A932 /* TranscriptionEngine.swift */; };
 		58F873EB3A01F90C95BE89C8 /* ModelManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC12BF74E7170DE4D942F9 /* ModelManagerTests.swift */; };
@@ -113,6 +115,7 @@
 		BF0F4F077311D993E911E3CE /* EditorStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorStore.swift; sourceTree = "<group>"; };
 		BF6CFD6C7844E67944716A3B /* TextEnhancerContractTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEnhancerContractTests.swift; sourceTree = "<group>"; };
 		C5497A7D91A6BB3D38CBB2B7 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
+		C6CC1366D5611F1DDD109A9F /* EditorWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorWindow.swift; sourceTree = "<group>"; };
 		C88408EA237E7DB99955F6CA /* DictationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictationController.swift; sourceTree = "<group>"; };
 		CEF5EB47B1C0760BCA4B2223 /* FakeOutputSink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeOutputSink.swift; sourceTree = "<group>"; };
 		D9C34C2D4E87339CD12F703D /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 		EA1C1909099A8C07FB7C64F5 /* VocabularyEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyEntry.swift; sourceTree = "<group>"; };
 		EC22565E616C655B3743DC04 /* SpeechEditorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeechEditorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85C5707DEE7A8662419FF10 /* OpenAIEnhancerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIEnhancerTests.swift; sourceTree = "<group>"; };
+		FB91B3931261D3E31B2ED053 /* EditorToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorToolbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				BF0F4F077311D993E911E3CE /* EditorStore.swift */,
+				FB91B3931261D3E31B2ED053 /* EditorToolbar.swift */,
+				C6CC1366D5611F1DDD109A9F /* EditorWindow.swift */,
 			);
 			path = Editor;
 			sourceTree = "<group>";
@@ -436,6 +442,8 @@
 				D1C182F9B61F4F2BE3097B40 /* CursorPasteSink.swift in Sources */,
 				9DAC6C9B253D2E98E83554B2 /* DictationController.swift in Sources */,
 				206083AB3647440D0649B26F /* EditorStore.swift in Sources */,
+				029D3002383F68300321D4C5 /* EditorToolbar.swift in Sources */,
+				4E21F57D3B0E7DBFF71892F5 /* EditorWindow.swift in Sources */,
 				7F6903208CFFB556403347D3 /* HotkeyManager.swift in Sources */,
 				41DA99B6E86125395B561B5A /* Logger.swift in Sources */,
 				19BDA04EB1B9F840F34EDCE2 /* ModelManager.swift in Sources */,

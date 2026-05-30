@@ -1,4 +1,4 @@
-enum EditorAction: CaseIterable, Equatable {
+enum EditorAction: CaseIterable, Equatable, Hashable {
     case rewrite, summarize, changeTone, translate, fixGrammar
     var title: String {
         switch self {
