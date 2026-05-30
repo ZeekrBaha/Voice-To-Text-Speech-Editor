@@ -149,3 +149,13 @@ MediaRemoteAdapter media control.
   default to a small model for fast first-run, with download UI for larger ones.
 - **Assumption:** App is distributed as a developer-signed `.app` (not App Store) given
   Accessibility + global hotkey requirements.
+
+## Addendum (2026-05-30): Transcription engine
+
+whisper.cpp could not be integrated as an SPM source dependency on the Xcode 26.5
+toolchain — its package surfaced unsafe build flags / `systemLibrary` setup, and the
+tags we tried lacked a usable `Package.swift`, so SPM refused it. To keep the MVP
+unblocked, transcription ships on Apple's on-device Speech framework
+(`AppleSpeechEngine`) behind the unchanged `TranscriptionEngine` protocol. Because
+that seam is narrow, whisper remains addable later via a vendored `.xcframework`
+without disturbing the rest of the pipeline; `ModelManager` is retained for that path.
