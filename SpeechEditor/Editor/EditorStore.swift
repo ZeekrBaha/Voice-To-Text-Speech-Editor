@@ -1,5 +1,25 @@
+import AppKit
 import Foundation
 import Observation
+
+enum ExportFormat: String, CaseIterable, Identifiable {
+    case markdown, plainText, rtf
+    var id: String { rawValue }
+    var label: String {
+        switch self {
+        case .markdown:  return "Markdown (.md)"
+        case .plainText: return "Plain Text (.txt)"
+        case .rtf:       return "Rich Text (.rtf)"
+        }
+    }
+    var fileExtension: String {
+        switch self {
+        case .markdown: return "md"
+        case .plainText: return "txt"
+        case .rtf: return "rtf"
+        }
+    }
+}
 
 @MainActor
 @Observable
@@ -77,5 +97,27 @@ final class EditorStore {
         let fmt = ISO8601DateFormatter()
         return transcripts.map { "### \(fmt.string(from: $0.createdAt))\n\n\($0.displayText)" }
             .joined(separator: "\n\n")
+    }
+
+    /// Render all transcripts in the requested format.
+    func exportText(_ format: ExportFormat) -> String {
+        switch format {
+        case .markdown:
+            return exportMarkdown()
+        case .plainText:
+            return transcripts.map(\.displayText).joined(separator: "\n\n")
+        case .rtf:
+            let plain = transcripts.map(\.displayText).joined(separator: "\n\n")
+            let attr = NSAttributedString(string: plain)
+            let data = (try? attr.data(
+                from: NSRange(location: 0, length: attr.length),
+                documentAttributes: [.documentType: NSAttributedString.DocumentType.rtf])) ?? Data()
+            return String(data: data, encoding: .utf8) ?? plain
+        }
+    }
+
+    /// Write the rendered export to disk (testable seam; the save panel calls this).
+    func exportText(_ format: ExportFormat, to url: URL) throws {
+        try exportText(format).write(to: url, atomically: true, encoding: .utf8)
     }
 }

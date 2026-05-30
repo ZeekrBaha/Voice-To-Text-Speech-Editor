@@ -21,10 +21,10 @@ final class AppContainer {
         let s = settingsStore.settings
         switch s.aiProvider {
         case .ollama:
-            return OllamaEnhancer(model: s.ollamaModel)
+            return OllamaEnhancer(model: s.ollamaModel, translationLanguage: s.translationLanguage)
         case .openai:
             let key = ProcessInfo.processInfo.environment["OPENAI_API_KEY"] ?? ""
-            return OpenAIEnhancer(apiKey: key, model: s.openAIModel)
+            return OpenAIEnhancer(apiKey: key, model: s.openAIModel, translationLanguage: s.translationLanguage)
         }
     }
 
@@ -62,7 +62,8 @@ final class AppContainer {
 
     func showEditor() {
         windowManager.showEditor(store: editorStore, enhancer: makeEnhancer(),
-                                 vocabulary: vocabularyTerms, status: status)
+                                 vocabulary: vocabularyTerms, status: status,
+                                 providerName: settingsStore.settings.aiProvider.rawValue.capitalized)
     }
 
     func showOnboarding() {

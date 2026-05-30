@@ -96,4 +96,30 @@ struct EditorStoreTests {
         #expect(md.contains("one"))
         #expect(md.contains("two"))
     }
+
+    @MainActor
+    @Test("exportText renders markdown, plain text, and rtf")
+    func exportFormats() {
+        let s = EditorStore(store: FakeTranscriptStore())
+        s.add(Transcript(id: UUID(), createdAt: Date(timeIntervalSince1970: 0), rawText: "hello", enhancedText: nil))
+        #expect(s.exportText(.markdown).contains("###"))
+        let plain = s.exportText(.plainText)
+        #expect(plain.contains("hello"))
+        #expect(!plain.contains("###"))
+        #expect(s.exportText(.rtf).contains("rtf"))   // RTF header {\rtf1...
+    }
+
+    @MainActor
+    @Test("exportText(to:) writes the rendered content to disk")
+    func exportToFile() throws {
+        let s = EditorStore(store: FakeTranscriptStore())
+        s.add(Transcript(id: UUID(), createdAt: Date(timeIntervalSince1970: 0),
+                         rawText: "diskcontent", enhancedText: nil))
+        let url = FileManager.default.temporaryDirectory
+            .appendingPathComponent("export-\(UUID().uuidString).txt")
+        try s.exportText(.plainText, to: url)
+        let read = try String(contentsOf: url, encoding: .utf8)
+        #expect(read.contains("diskcontent"))
+        try? FileManager.default.removeItem(at: url)
+    }
 }
