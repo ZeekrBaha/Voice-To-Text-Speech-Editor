@@ -34,8 +34,8 @@ final class DictationController {
                 enhanced = try? await enhancer.clean(raw, vocabulary: vocabulary)
             }
             let final = enhanced ?? raw
-            try sink.deliver(final)
             store.add(Transcript(id: UUID(), createdAt: Date(), rawText: raw, enhancedText: enhanced))
+            try sink.deliver(final)
         } catch {
             Log.pipeline.error("pipeline failed: \(error)")
         }
