@@ -62,7 +62,7 @@ final class DictationController {
             try sink.deliver(final)
         } catch {
             Log.pipeline.error("paste failed: \(error)")
-            status.post(.pasteFailed)
+            status.post((error as? AppError) ?? .pasteFailed)
         }
     }
 }
