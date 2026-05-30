@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		029D3002383F68300321D4C5 /* EditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB91B3931261D3E31B2ED053 /* EditorToolbar.swift */; };
 		076EDC3ED53A3ED7981D471B /* FakeAudioCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472894BB7941F3651DAD5DBB /* FakeAudioCapture.swift */; };
+		09674ED431B4BA62EEF54E0A /* LaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D895B1ADE9E3DE980E4BBCD /* LaunchAtLogin.swift */; };
 		0A9C5A85B167B146EB36FF29 /* StatusCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867A118FC0348F3DF150673B /* StatusCenterTests.swift */; };
 		0AE6D81AB84D54D39442A082 /* TextEnhancerContractTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6CFD6C7844E67944716A3B /* TextEnhancerContractTests.swift */; };
 		0ED7BFFA0B6DC2528CA0FBC5 /* TranscriptionEngineContractTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B935DF2B7845BF2C4FD92 /* TranscriptionEngineContractTests.swift */; };
@@ -34,6 +35,7 @@
 		584728EA56606174B69D4B69 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C97DCC139B98050C25E43 /* WindowManager.swift */; };
 		5895E6E3193FC9ED6BAC5C73 /* TranscriptionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E371C7D15FF09EE83A932 /* TranscriptionEngine.swift */; };
 		5A2DD2BE442DF34474E0457F /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E06E12A7A44FA91F5E7D3D /* AppError.swift */; };
+		5AF4FE7F2F25878BF28D3BAC /* FakeLaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630C1AFB0DA4AAA614242390 /* FakeLaunchAtLogin.swift */; };
 		5B3AB48EECC759866918FFBF /* PermissionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8DF1ACC15DCDE4CDB1BF6 /* PermissionsService.swift */; };
 		697EDA3AE63929F42D738A70 /* FakeTextEnhancer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D23000A2F11E467CB55A6BC /* FakeTextEnhancer.swift */; };
 		6A7FEF8AD102303EC35BA723 /* AppErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11DDDA69C8C0A0B0FE32C3 /* AppErrorTests.swift */; };
@@ -91,6 +93,7 @@
 		069D649181DDA42BCE55A330 /* CursorPasteSinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorPasteSinkTests.swift; sourceTree = "<group>"; };
 		08F9D4F765A3391F3D1005B9 /* CursorPasteSink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorPasteSink.swift; sourceTree = "<group>"; };
 		0A11DDDA69C8C0A0B0FE32C3 /* AppErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorTests.swift; sourceTree = "<group>"; };
+		0D895B1ADE9E3DE980E4BBCD /* LaunchAtLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLogin.swift; sourceTree = "<group>"; };
 		13203FA860ED7B496A482DA8 /* StatusCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCenter.swift; sourceTree = "<group>"; };
 		13A3B2D8256899BA83F93BD5 /* AppleSpeechEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSpeechEngine.swift; sourceTree = "<group>"; };
 		19E06E12A7A44FA91F5E7D3D /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -112,6 +115,7 @@
 		5E30720D365990493E4855D5 /* HUDController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
 		5F10C7EDC93D1F63E7061A6C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		622E6182B57F43016DB7963B /* OutputSink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputSink.swift; sourceTree = "<group>"; };
+		630C1AFB0DA4AAA614242390 /* FakeLaunchAtLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLaunchAtLogin.swift; sourceTree = "<group>"; };
 		6538D4A831C2110A5236B7D5 /* EditorStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorStoreTests.swift; sourceTree = "<group>"; };
 		76CA29A7465D1E61FE060264 /* TranscriptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptTests.swift; sourceTree = "<group>"; };
 		7C27B8E6D8DBB79B9334E032 /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 		3E852B226E43060B176D47CE /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				0D895B1ADE9E3DE980E4BBCD /* LaunchAtLogin.swift */,
 				49804172428734723689CF0C /* SettingsStore.swift */,
 				9D894BBAFF51B0A0BEB92C99 /* SettingsView.swift */,
 			);
@@ -266,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				472894BB7941F3651DAD5DBB /* FakeAudioCapture.swift */,
+				630C1AFB0DA4AAA614242390 /* FakeLaunchAtLogin.swift */,
 				CEF5EB47B1C0760BCA4B2223 /* FakeOutputSink.swift */,
 				5D23000A2F11E467CB55A6BC /* FakeTextEnhancer.swift */,
 				B810DDCE61013C8C712AC1DF /* FakeTranscriptionEngine.swift */,
@@ -485,6 +491,7 @@
 				4E21F57D3B0E7DBFF71892F5 /* EditorWindow.swift in Sources */,
 				8B2D7F8729A47E615A997548 /* HUDController.swift in Sources */,
 				7F6903208CFFB556403347D3 /* HotkeyManager.swift in Sources */,
+				09674ED431B4BA62EEF54E0A /* LaunchAtLogin.swift in Sources */,
 				41DA99B6E86125395B561B5A /* Logger.swift in Sources */,
 				27CD68336F331FEA6590333F /* MiniRecorderHUD.swift in Sources */,
 				7263A6958942E7FDB1584E50 /* OllamaEnhancer.swift in Sources */,
@@ -519,6 +526,7 @@
 				C7DD3C1EB2632663BD5F140D /* DictationControllerTests.swift in Sources */,
 				358B27ACF5B8E75C73B3E287 /* EditorStoreTests.swift in Sources */,
 				076EDC3ED53A3ED7981D471B /* FakeAudioCapture.swift in Sources */,
+				5AF4FE7F2F25878BF28D3BAC /* FakeLaunchAtLogin.swift in Sources */,
 				39DD36FCA21A486DFE84B271 /* FakeOutputSink.swift in Sources */,
 				697EDA3AE63929F42D738A70 /* FakeTextEnhancer.swift in Sources */,
 				AD55A853B48E17DAD0609A2D /* FakeTranscriptStore.swift in Sources */,

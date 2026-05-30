@@ -5,14 +5,16 @@ import AVFoundation
 /// Concrete TranscriptionEngine backed by Apple's on-device Speech framework.
 /// Build-verified only; real recognition requires Speech authorization (handled by PermissionsService).
 final class AppleSpeechEngine: TranscriptionEngine {
-    private let locale: Locale
+    /// Resolved per call so changing the language in Settings takes effect without a relaunch.
+    private let localeProvider: () -> Locale
 
-    init(locale: Locale = Locale(identifier: "en-US")) {
-        self.locale = locale
+    init(localeProvider: @escaping () -> Locale = { Locale(identifier: "en-US") }) {
+        self.localeProvider = localeProvider
     }
 
     func transcribe(_ audio: AudioBuffer, vocabulary: [String]) async throws -> String {
         guard !audio.samples.isEmpty else { return "" }
+        let locale = localeProvider()
         guard let recognizer = SFSpeechRecognizer(locale: locale), recognizer.isAvailable else {
             throw AppError.transcriptionFailed("Speech recognizer is unavailable for \(locale.identifier).")
         }

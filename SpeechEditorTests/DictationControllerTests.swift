@@ -10,14 +10,17 @@ struct DictationControllerTests {
         enhancer: FakeTextEnhancer = .init(),
         sink: FakeOutputSink = .init(),
         settings: AppSettings = .default,
+        vocabulary: [String] = ["Xcode"],
         store: EditorStore? = nil,
         status: StatusCenter? = nil
     ) -> DictationController {
+        var settings = settings
+        settings.vocabulary = vocabulary.compactMap { VocabularyEntry(term: $0) }
         let store = store ?? EditorStore(store: FakeTranscriptStore())
         let status = status ?? StatusCenter()
         return DictationController(capture: capture, engine: engine,
                             enhancerProvider: { enhancer },
-                            sink: sink, vocabulary: ["Xcode"],
+                            sink: sink,
                             settingsProvider: { settings }, store: store, status: status)
     }
 
@@ -91,5 +94,29 @@ struct DictationControllerTests {
         c.startRecording(); await c.stopRecordingAndProcess()
         #expect(status.current?.severity == .error)
         #expect(store.transcripts.last?.rawText == "kept words")  // never lost
+    }
+
+    @MainActor
+    @Test("pasteMode .editorOnly stores the transcript but does not paste")
+    func editorOnly() async throws {
+        var settings = AppSettings.default; settings.pasteMode = .editorOnly
+        let engine = FakeTranscriptionEngine(); engine.result = "note"
+        let sink = FakeOutputSink(); let store = EditorStore(store: FakeTranscriptStore())
+        let c = makeController(engine: engine, sink: sink, settings: settings, store: store)
+        c.startRecording(); await c.stopRecordingAndProcess()
+        #expect(sink.delivered.isEmpty)
+        #expect(store.transcripts.last?.rawText == "note")
+    }
+
+    @MainActor
+    @Test("pasteMode .pasteOnly pastes but does not add to the Editor")
+    func pasteOnly() async throws {
+        var settings = AppSettings.default; settings.pasteMode = .pasteOnly
+        let engine = FakeTranscriptionEngine(); engine.result = "ephemeral"
+        let sink = FakeOutputSink(); let store = EditorStore(store: FakeTranscriptStore())
+        let c = makeController(engine: engine, sink: sink, settings: settings, store: store)
+        c.startRecording(); await c.stopRecordingAndProcess()
+        #expect(sink.delivered == ["ephemeral"])
+        #expect(store.transcripts.isEmpty)
     }
 }

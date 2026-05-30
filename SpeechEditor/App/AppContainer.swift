@@ -8,11 +8,12 @@ final class AppContainer {
     let permissions = PermissionsService()
     let windowManager = WindowManager()
     let status = StatusCenter()
+    let launchAtLogin: LaunchAtLoginManaging = SMAppServiceLaunchAtLogin()
     private let hud = HUDController()
     private var dictation: DictationController!
     private var hotkeys: HotkeyManager!
 
-    private let vocabulary: [String] = []  // personal vocabulary UI is a later iteration
+    private var vocabularyTerms: [String] { settingsStore.settings.vocabulary.map(\.term) }
 
     init() { buildPipeline() }
 
@@ -30,14 +31,18 @@ final class AppContainer {
     private func buildPipeline() {
         dictation = DictationController(
             capture: AVAudioCaptureService(),
-            engine: AppleSpeechEngine(),
+            engine: AppleSpeechEngine(
+                localeProvider: { [unowned self] in
+                    Locale(identifier: self.settingsStore.settings.localeIdentifier)
+                }),
             enhancerProvider: { [unowned self] in self.makeEnhancer() },
-            sink: CursorPasteSink(),
-            vocabulary: vocabulary,
+            sink: CursorPasteSink(
+                restoreDelayMs: { [unowned self] in self.settingsStore.settings.pasteDelayMs }),
             settingsProvider: { [unowned self] in self.settingsStore.settings },
             store: editorStore,
             status: status)
         hotkeys = HotkeyManager(
+            modifierProvider: { [unowned self] in self.settingsStore.settings.hotkeyModifier },
             onStart: { [weak self] in self?.hud.show(); self?.dictation.startRecording() },
             onStop:  { [weak self] in
                 guard let self else { return }
@@ -57,7 +62,7 @@ final class AppContainer {
 
     func showEditor() {
         windowManager.showEditor(store: editorStore, enhancer: makeEnhancer(),
-                                 vocabulary: vocabulary, status: status)
+                                 vocabulary: vocabularyTerms, status: status)
     }
 
     func showOnboarding() {
