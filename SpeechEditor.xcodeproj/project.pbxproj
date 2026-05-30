@@ -16,6 +16,7 @@
 		6E30ACED4BCFDAB400482B05 /* AudioBufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA16CDDEEB820BCC6DFFDA05 /* AudioBufferTests.swift */; };
 		7A6FD421323E7008B7014CA8 /* TranscriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA29A7465D1E61FE060264 /* TranscriptTests.swift */; };
 		8589A2E659B17C3F70AB127F /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 0F2A0D3F59E5CC42E5BD4FFC /* Zip */; };
+		8D6550C472A2C152D0656E0F /* AVAudioCaptureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE189D48B6BA9C190E2467BA /* AVAudioCaptureService.swift */; };
 		9779832A4D06ED9550AFA86E /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C34C2D4E87339CD12F703D /* AppSettings.swift */; };
 		9B9719CF59EB7359B78735A0 /* AudioCapturing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A087CC00D5E7A69F45FBB05F /* AudioCapturing.swift */; };
 		AA2EC7C6DF154D25D02DFBA2 /* SpeechEditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD20528F93FA19FD72EBEA2 /* SpeechEditorApp.swift */; };
@@ -60,6 +61,7 @@
 		99DE45CB563FA4D4BC68D1C2 /* AppSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsTests.swift; sourceTree = "<group>"; };
 		A087CC00D5E7A69F45FBB05F /* AudioCapturing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCapturing.swift; sourceTree = "<group>"; };
 		A84439AC9D9653CCAD58F741 /* Transcript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
+		AE189D48B6BA9C190E2467BA /* AVAudioCaptureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioCaptureService.swift; sourceTree = "<group>"; };
 		B3B34ED0306F47944361C87A /* SpeechEditorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeechEditorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4154DCA21B013CE3A9FD055 /* SpeechEditor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpeechEditor.entitlements; sourceTree = "<group>"; };
 		BA16CDDEEB820BCC6DFFDA05 /* AudioBufferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBufferTests.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				A087CC00D5E7A69F45FBB05F /* AudioCapturing.swift */,
+				AE189D48B6BA9C190E2467BA /* AVAudioCaptureService.swift */,
 			);
 			path = Capture;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D6550C472A2C152D0656E0F /* AVAudioCaptureService.swift in Sources */,
 				5A2DD2BE442DF34474E0457F /* AppError.swift in Sources */,
 				9779832A4D06ED9550AFA86E /* AppSettings.swift in Sources */,
 				9B9719CF59EB7359B78735A0 /* AudioCapturing.swift in Sources */,
