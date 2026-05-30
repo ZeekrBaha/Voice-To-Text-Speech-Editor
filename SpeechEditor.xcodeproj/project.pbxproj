@@ -20,12 +20,14 @@
 		358B27ACF5B8E75C73B3E287 /* EditorStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6538D4A831C2110A5236B7D5 /* EditorStoreTests.swift */; };
 		39DD36FCA21A486DFE84B271 /* FakeOutputSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5EB47B1C0760BCA4B2223 /* FakeOutputSink.swift */; };
 		41DA99B6E86125395B561B5A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F9DFD651A4DCAE4C76221 /* Logger.swift */; };
+		42B67AECD7A43AB35C04B038 /* PermissionsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20294803EB1AACC31D30E5A4 /* PermissionsServiceTests.swift */; };
 		49877B0FA3487A824FF12C30 /* OutputSinkContractTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592FEBE7BA2D162C16F4E457 /* OutputSinkContractTests.swift */; };
 		4E21F57D3B0E7DBFF71892F5 /* EditorWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CC1366D5611F1DDD109A9F /* EditorWindow.swift */; };
 		54E7159B25EE573AE34D5669 /* OpenAIEnhancer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22F429F260B5D02234680C9 /* OpenAIEnhancer.swift */; };
 		5895E6E3193FC9ED6BAC5C73 /* TranscriptionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E371C7D15FF09EE83A932 /* TranscriptionEngine.swift */; };
 		58F873EB3A01F90C95BE89C8 /* ModelManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EC12BF74E7170DE4D942F9 /* ModelManagerTests.swift */; };
 		5A2DD2BE442DF34474E0457F /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E06E12A7A44FA91F5E7D3D /* AppError.swift */; };
+		5B3AB48EECC759866918FFBF /* PermissionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8DF1ACC15DCDE4CDB1BF6 /* PermissionsService.swift */; };
 		697EDA3AE63929F42D738A70 /* FakeTextEnhancer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D23000A2F11E467CB55A6BC /* FakeTextEnhancer.swift */; };
 		6A7FEF8AD102303EC35BA723 /* AppErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11DDDA69C8C0A0B0FE32C3 /* AppErrorTests.swift */; };
 		6E30ACED4BCFDAB400482B05 /* AudioBufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA16CDDEEB820BCC6DFFDA05 /* AudioBufferTests.swift */; };
@@ -86,8 +88,10 @@
 		13A3B2D8256899BA83F93BD5 /* AppleSpeechEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSpeechEngine.swift; sourceTree = "<group>"; };
 		19E06E12A7A44FA91F5E7D3D /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		1A2A11060516D0C657DA7C22 /* DictationControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictationControllerTests.swift; sourceTree = "<group>"; };
+		20294803EB1AACC31D30E5A4 /* PermissionsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsServiceTests.swift; sourceTree = "<group>"; };
 		2DD20528F93FA19FD72EBEA2 /* SpeechEditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechEditorApp.swift; sourceTree = "<group>"; };
 		393651094AEACAFB74181C36 /* SpeechEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeechEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43D8DF1ACC15DCDE4CDB1BF6 /* PermissionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsService.swift; sourceTree = "<group>"; };
 		466B9B9BB0F8F9051EE80726 /* OllamaEnhancerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OllamaEnhancerTests.swift; sourceTree = "<group>"; };
 		46BB81937B1202084B408388 /* SpeechEditorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechEditorUITests.swift; sourceTree = "<group>"; };
 		472894BB7941F3651DAD5DBB /* FakeAudioCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAudioCapture.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 				0896C32FFBA37AF84891C2AA /* Editor */,
 				4928FB84E24C172CD326F9EF /* Enhancement */,
 				CDFE3EF4D9E343F2ED75029C /* Models */,
+				873CFABB551E0D8474ABCFE1 /* Onboarding */,
 				93E0C047FBED4794FFEDCDA5 /* Output */,
 				6FD5A646B01704A30483995E /* Pipeline */,
 				360F32B74FABB62BDF0755EC /* Resources */,
@@ -270,6 +275,14 @@
 			path = SpeechEditorUITests;
 			sourceTree = "<group>";
 		};
+		873CFABB551E0D8474ABCFE1 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				43D8DF1ACC15DCDE4CDB1BF6 /* PermissionsService.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		93E0C047FBED4794FFEDCDA5 /* Output */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +315,7 @@
 				466B9B9BB0F8F9051EE80726 /* OllamaEnhancerTests.swift */,
 				F85C5707DEE7A8662419FF10 /* OpenAIEnhancerTests.swift */,
 				592FEBE7BA2D162C16F4E457 /* OutputSinkContractTests.swift */,
+				20294803EB1AACC31D30E5A4 /* PermissionsServiceTests.swift */,
 				E9D10F2FA35C556323A60A00 /* PromptLibraryTests.swift */,
 				4EE1B4DC8A1ED08F52E66F8F /* SettingsStoreTests.swift */,
 				87DDDEB6B006BFE11D4A6D56 /* SmokeTests.swift */,
@@ -464,6 +478,7 @@
 				7263A6958942E7FDB1584E50 /* OllamaEnhancer.swift in Sources */,
 				54E7159B25EE573AE34D5669 /* OpenAIEnhancer.swift in Sources */,
 				6F4C7722334BB34D2756BA5F /* OutputSink.swift in Sources */,
+				5B3AB48EECC759866918FFBF /* PermissionsService.swift in Sources */,
 				B790FA7C7910FEFE4F7D5AD7 /* PromptLibrary.swift in Sources */,
 				AB17E360F0E1BCE0630BD8AD /* SettingsStore.swift in Sources */,
 				AA2EC7C6DF154D25D02DFBA2 /* SpeechEditorApp.swift in Sources */,
@@ -494,6 +509,7 @@
 				B05ADEFCDD44D6157381BD49 /* OllamaEnhancerTests.swift in Sources */,
 				2044F7D6B92C14AAACE7173F /* OpenAIEnhancerTests.swift in Sources */,
 				49877B0FA3487A824FF12C30 /* OutputSinkContractTests.swift in Sources */,
+				42B67AECD7A43AB35C04B038 /* PermissionsServiceTests.swift in Sources */,
 				840EC6638D08A516579C1086 /* PromptLibraryTests.swift in Sources */,
 				DC8CE8017A24FC3529166EF0 /* SettingsStoreTests.swift in Sources */,
 				FCE07ECDAD45872C36FD015B /* SmokeTests.swift in Sources */,
