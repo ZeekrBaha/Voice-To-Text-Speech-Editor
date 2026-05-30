@@ -27,17 +27,19 @@ final class WindowManager {
         NSApp.activate(ignoringOtherApps: true)
     }
 
-    func showEditor(store: EditorStore, enhancer: TextEnhancer, vocabulary: [String]) {
+    func showEditor(store: EditorStore, enhancer: TextEnhancer, vocabulary: [String],
+                    status: StatusCenter, providerName: String) {
         if let w = editorWindow {
             w.makeKeyAndOrderFront(nil)
             NSApp.activate(ignoringOtherApps: true)
             return
         }
-        let view = EditorWindow(store: store, enhancer: enhancer, vocabulary: vocabulary)
+        let view = EditorWindow(store: store, enhancer: enhancer, vocabulary: vocabulary,
+                                status: status, providerName: providerName)
         let hosting = NSHostingController(rootView: view)
         let w = NSWindow(contentViewController: hosting)
         w.title = "Speech Editor"
-        w.setContentSize(NSSize(width: 560, height: 400))
+        w.setContentSize(NSSize(width: 780, height: 460))
         w.styleMask = [.titled, .closable, .miniaturizable, .resizable]
         w.isReleasedWhenClosed = false
         editorWindow = w

@@ -24,5 +24,11 @@ final class EditorSmokeUITests: XCTestCase {
         let editor = app.textViews["editorTextView"]
         XCTAssertTrue(editor.waitForExistence(timeout: 15), "Editor text view should appear")
         XCTAssertTrue(app.buttons["exportButton"].waitForExistence(timeout: 5), "Export button should exist")
+
+        // v0.2 editor chrome should all be present.
+        XCTAssertTrue(app.buttons["moreActions"].exists, "More-actions menu should exist")
+        XCTAssertTrue(app.buttons["copyButton"].exists, "Copy button should exist")
+        XCTAssertTrue(app.buttons["action_Rewrite"].exists, "Primary Rewrite action should exist")
+        XCTAssertTrue(app.textFields["historySearch"].exists, "History search field should exist")
     }
 }

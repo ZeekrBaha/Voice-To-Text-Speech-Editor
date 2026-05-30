@@ -14,7 +14,8 @@ struct SpeechEditorApp: App {
         .menuBarExtraStyle(.menu)
 
         Settings {
-            SettingsView(settingsStore: delegate.container.settingsStore)
+            SettingsView(settingsStore: delegate.container.settingsStore,
+                         launchAtLogin: delegate.container.launchAtLogin)
         }
     }
 }

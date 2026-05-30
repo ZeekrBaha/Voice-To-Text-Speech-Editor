@@ -3,20 +3,22 @@ import Foundation
 final class OllamaEnhancer: TextEnhancer {
     typealias Transport = (URLRequest) async throws -> (Data, URLResponse)
     private let model: String
+    private let translationLanguage: String
     private let baseURL: URL
     private let transport: Transport
 
-    init(model: String,
+    init(model: String, translationLanguage: String = "Spanish",
          baseURL: URL = URL(string: "http://localhost:11434")!,
          transport: @escaping Transport = { try await URLSession.shared.data(for: $0) }) {
-        self.model = model; self.baseURL = baseURL; self.transport = transport
+        self.model = model; self.translationLanguage = translationLanguage
+        self.baseURL = baseURL; self.transport = transport
     }
 
     func clean(_ text: String, vocabulary: [String]) async throws -> String {
         try await generate(PromptLibrary.clean(text: text, vocabulary: vocabulary))
     }
     func apply(_ action: EditorAction, to text: String) async throws -> String {
-        try await generate(PromptLibrary.action(action, text: text))
+        try await generate(PromptLibrary.action(action, text: text, translationLanguage: translationLanguage))
     }
 
     private func generate(_ prompt: String) async throws -> String {

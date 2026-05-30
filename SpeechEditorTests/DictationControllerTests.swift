@@ -10,10 +10,18 @@ struct DictationControllerTests {
         enhancer: FakeTextEnhancer = .init(),
         sink: FakeOutputSink = .init(),
         settings: AppSettings = .default,
-        store: EditorStore = .init()
+        vocabulary: [String] = ["Xcode"],
+        store: EditorStore? = nil,
+        status: StatusCenter? = nil
     ) -> DictationController {
-        DictationController(capture: capture, engine: engine, enhancer: enhancer,
-                            sink: sink, vocabulary: ["Xcode"], settings: settings, store: store)
+        var settings = settings
+        settings.vocabulary = vocabulary.compactMap { VocabularyEntry(term: $0) }
+        let store = store ?? EditorStore(store: FakeTranscriptStore())
+        let status = status ?? StatusCenter()
+        return DictationController(capture: capture, engine: engine,
+                            enhancerProvider: { enhancer },
+                            sink: sink,
+                            settingsProvider: { settings }, store: store, status: status)
     }
 
     @MainActor
@@ -21,7 +29,7 @@ struct DictationControllerTests {
     func happyPath() async throws {
         let engine = FakeTranscriptionEngine(); engine.result = "helo wrld"
         let enhancer = FakeTextEnhancer(); enhancer.cleanResult = "Hello, world."
-        let sink = FakeOutputSink(); let store = EditorStore()
+        let sink = FakeOutputSink(); let store = EditorStore(store: FakeTranscriptStore())
         let c = makeController(engine: engine, enhancer: enhancer, sink: sink, store: store)
         c.startRecording()
         await c.stopRecordingAndProcess()
@@ -54,13 +62,61 @@ struct DictationControllerTests {
     }
 
     @MainActor
-    @Test("enhancement failure still delivers raw transcript")
+    @Test("enhancement failure still delivers raw transcript and posts an info status")
     func enhancementFails() async throws {
         let engine = FakeTranscriptionEngine(); engine.result = "raw text"
         let enhancer = FakeTextEnhancer(); enhancer.errorToThrow = AppError.enhancementFailed("x")
-        let sink = FakeOutputSink()
-        let c = makeController(engine: engine, enhancer: enhancer, sink: sink)
+        let sink = FakeOutputSink(); let status = StatusCenter()
+        let c = makeController(engine: engine, enhancer: enhancer, sink: sink, status: status)
         c.startRecording(); await c.stopRecordingAndProcess()
         #expect(sink.delivered == ["raw text"])
+        #expect(status.current?.severity == .info)
+    }
+
+    @MainActor
+    @Test("transcription failure posts an error status and delivers nothing")
+    func transcriptionFails() async throws {
+        let engine = FakeTranscriptionEngine(); engine.errorToThrow = AppError.transcriptionFailed("boom")
+        let sink = FakeOutputSink(); let status = StatusCenter()
+        let c = makeController(engine: engine, sink: sink, status: status)
+        c.startRecording(); await c.stopRecordingAndProcess()
+        #expect(sink.delivered.isEmpty)
+        #expect(status.current?.severity == .error)
+    }
+
+    @MainActor
+    @Test("paste failure posts an error status but the transcript is still stored")
+    func pasteFails() async throws {
+        let engine = FakeTranscriptionEngine(); engine.result = "kept words"
+        let sink = FakeOutputSink(); sink.errorToThrow = AppError.pasteFailed
+        let status = StatusCenter(); let store = EditorStore(store: FakeTranscriptStore())
+        let c = makeController(engine: engine, sink: sink, store: store, status: status)
+        c.startRecording(); await c.stopRecordingAndProcess()
+        #expect(status.current?.severity == .error)
+        #expect(store.transcripts.last?.rawText == "kept words")  // never lost
+    }
+
+    @MainActor
+    @Test("pasteMode .editorOnly stores the transcript but does not paste")
+    func editorOnly() async throws {
+        var settings = AppSettings.default; settings.pasteMode = .editorOnly
+        let engine = FakeTranscriptionEngine(); engine.result = "note"
+        let sink = FakeOutputSink(); let store = EditorStore(store: FakeTranscriptStore())
+        let c = makeController(engine: engine, sink: sink, settings: settings, store: store)
+        c.startRecording(); await c.stopRecordingAndProcess()
+        #expect(sink.delivered.isEmpty)
+        #expect(store.transcripts.last?.rawText == "note")
+    }
+
+    @MainActor
+    @Test("pasteMode .pasteOnly pastes but does not add to the Editor")
+    func pasteOnly() async throws {
+        var settings = AppSettings.default; settings.pasteMode = .pasteOnly
+        let engine = FakeTranscriptionEngine(); engine.result = "ephemeral"
+        let sink = FakeOutputSink(); let store = EditorStore(store: FakeTranscriptStore())
+        let c = makeController(engine: engine, sink: sink, settings: settings, store: store)
+        c.startRecording(); await c.stopRecordingAndProcess()
+        #expect(sink.delivered == ["ephemeral"])
+        #expect(store.transcripts.isEmpty)
     }
 }

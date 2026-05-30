@@ -15,4 +15,11 @@ struct PromptLibraryTests {
         #expect(Set(prompts).count == EditorAction.allCases.count)
         #expect(prompts.allSatisfy { $0.contains("x") })
     }
+
+    @Test("translate uses the configured language")
+    func translateLanguage() {
+        let p = PromptLibrary.action(.translate, text: "hi", translationLanguage: "French")
+        #expect(p.contains("French"))
+        #expect(!p.contains("Spanish"))
+    }
 }
