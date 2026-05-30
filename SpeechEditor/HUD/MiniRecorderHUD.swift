@@ -13,3 +13,17 @@ struct MiniRecorderHUD: View {
         .onAppear { withAnimation(.easeInOut(duration: 0.7).repeatForever()) { pulse = true } }
     }
 }
+
+/// Transient message HUD used by HUDController.flash (e.g. a dictation error).
+struct StatusFlashHUD: View {
+    let text: String
+
+    var body: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "exclamationmark.triangle.fill").foregroundStyle(.orange)
+            Text(text).font(.caption).bold().lineLimit(2)
+        }
+        .padding(.horizontal, 14).padding(.vertical, 8)
+        .background(.ultraThinMaterial, in: Capsule())
+    }
+}

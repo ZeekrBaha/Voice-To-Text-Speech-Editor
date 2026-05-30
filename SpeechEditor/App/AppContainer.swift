@@ -7,6 +7,7 @@ final class AppContainer {
     let editorStore = EditorStore()
     let permissions = PermissionsService()
     let windowManager = WindowManager()
+    let status = StatusCenter()
     private let hud = HUDController()
     private var dictation: DictationController!
     private var hotkeys: HotkeyManager!
@@ -34,20 +35,29 @@ final class AppContainer {
             sink: CursorPasteSink(),
             vocabulary: vocabulary,
             settingsProvider: { [unowned self] in self.settingsStore.settings },
-            store: editorStore)
+            store: editorStore,
+            status: status)
         hotkeys = HotkeyManager(
             onStart: { [weak self] in self?.hud.show(); self?.dictation.startRecording() },
             onStop:  { [weak self] in
                 guard let self else { return }
                 self.hud.hide()
-                Task { await self.dictation.stopRecordingAndProcess() }
+                Task {
+                    await self.dictation.stopRecordingAndProcess()
+                    // If the pipeline posted an error, flash it on the HUD so it's
+                    // visible even when the Editor window is closed.
+                    if let msg = self.status.current, msg.severity == .error {
+                        self.hud.flash(msg.text)
+                    }
+                }
             })
     }
 
     func start() { hotkeys.start() }
 
     func showEditor() {
-        windowManager.showEditor(store: editorStore, enhancer: makeEnhancer(), vocabulary: vocabulary)
+        windowManager.showEditor(store: editorStore, enhancer: makeEnhancer(),
+                                 vocabulary: vocabulary, status: status)
     }
 
     func showOnboarding() {
