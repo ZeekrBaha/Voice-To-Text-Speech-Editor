@@ -12,8 +12,10 @@ struct DictationControllerTests {
         settings: AppSettings = .default,
         store: EditorStore = .init()
     ) -> DictationController {
-        DictationController(capture: capture, engine: engine, enhancer: enhancer,
-                            sink: sink, vocabulary: ["Xcode"], settings: settings, store: store)
+        DictationController(capture: capture, engine: engine,
+                            enhancerProvider: { enhancer },
+                            sink: sink, vocabulary: ["Xcode"],
+                            settingsProvider: { settings }, store: store)
     }
 
     @MainActor

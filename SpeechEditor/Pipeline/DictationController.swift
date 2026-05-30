@@ -4,17 +4,22 @@ import Foundation
 final class DictationController {
     private let capture: AudioCapturing
     private let engine: TranscriptionEngine
-    private let enhancer: TextEnhancer
+    /// Resolved per dictation so a provider/model change in Settings takes effect without a relaunch.
+    private let enhancerProvider: () -> TextEnhancer
     private let sink: OutputSink
     private let vocabulary: [String]
-    private let settings: AppSettings
+    /// Read per dictation for the same reason (e.g. toggling enhancement off).
+    private let settingsProvider: () -> AppSettings
     private let store: EditorStore
     private let minSeconds: Double = 0.3
 
-    init(capture: AudioCapturing, engine: TranscriptionEngine, enhancer: TextEnhancer,
-         sink: OutputSink, vocabulary: [String], settings: AppSettings, store: EditorStore) {
-        self.capture = capture; self.engine = engine; self.enhancer = enhancer
-        self.sink = sink; self.vocabulary = vocabulary; self.settings = settings; self.store = store
+    init(capture: AudioCapturing, engine: TranscriptionEngine,
+         enhancerProvider: @escaping () -> TextEnhancer,
+         sink: OutputSink, vocabulary: [String],
+         settingsProvider: @escaping () -> AppSettings, store: EditorStore) {
+        self.capture = capture; self.engine = engine; self.enhancerProvider = enhancerProvider
+        self.sink = sink; self.vocabulary = vocabulary
+        self.settingsProvider = settingsProvider; self.store = store
     }
 
     func startRecording() {
@@ -30,8 +35,8 @@ final class DictationController {
             let raw = try await engine.transcribe(buffer, vocabulary: vocabulary)
             guard !raw.isEmpty else { return }
             var enhanced: String? = nil
-            if settings.enhancementEnabled {
-                enhanced = try? await enhancer.clean(raw, vocabulary: vocabulary)
+            if settingsProvider().enhancementEnabled {
+                enhanced = try? await enhancerProvider().clean(raw, vocabulary: vocabulary)
             }
             let final = enhanced ?? raw
             store.add(Transcript(id: UUID(), createdAt: Date(), rawText: raw, enhancedText: enhanced))

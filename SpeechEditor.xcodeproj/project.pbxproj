@@ -43,7 +43,6 @@
 		7A6FD421323E7008B7014CA8 /* TranscriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA29A7465D1E61FE060264 /* TranscriptTests.swift */; };
 		7F6903208CFFB556403347D3 /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27B8E6D8DBB79B9334E032 /* HotkeyManager.swift */; };
 		840EC6638D08A516579C1086 /* PromptLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D10F2FA35C556323A60A00 /* PromptLibraryTests.swift */; };
-		8589A2E659B17C3F70AB127F /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 0F2A0D3F59E5CC42E5BD4FFC /* Zip */; };
 		8B2D7F8729A47E615A997548 /* HUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E30720D365990493E4855D5 /* HUDController.swift */; };
 		8D6550C472A2C152D0656E0F /* AVAudioCaptureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE189D48B6BA9C190E2467BA /* AVAudioCaptureService.swift */; };
 		904481951AF2B0CDC7B9373A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8CA609821FFACE5913F7E /* AppDelegate.swift */; };
@@ -53,7 +52,6 @@
 		9F1D1591D8F33063E00C94F3 /* HotkeyManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E025CA4CCEDE3378E060D0DA /* HotkeyManagerTests.swift */; };
 		AA2EC7C6DF154D25D02DFBA2 /* SpeechEditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD20528F93FA19FD72EBEA2 /* SpeechEditorApp.swift */; };
 		AB17E360F0E1BCE0630BD8AD /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49804172428734723689CF0C /* SettingsStore.swift */; };
-		AFB09D35356B8B0E692072CC /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 6965E28FFC5C7D4CC5C8FB98 /* KeyboardShortcuts */; };
 		B05ADEFCDD44D6157381BD49 /* OllamaEnhancerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466B9B9BB0F8F9051EE80726 /* OllamaEnhancerTests.swift */; };
 		B790FA7C7910FEFE4F7D5AD7 /* PromptLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0F86D4D292D9E9EAC4932B /* PromptLibrary.swift */; };
 		BE51B985DFCF11B01841B9F4 /* VocabularyEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9DA59503D67B0FD2A9EB3 /* VocabularyEntryTests.swift */; };
@@ -64,8 +62,6 @@
 		E45FAD6A15380E26D58E3A56 /* VocabularyEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1C1909099A8C07FB7C64F5 /* VocabularyEntry.swift */; };
 		E49E4E9494775AA72BA02746 /* CursorPasteSinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069D649181DDA42BCE55A330 /* CursorPasteSinkTests.swift */; };
 		E57494360494D76D0EE75405 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F994EF5AB91581A9C20423 /* AppContainer.swift */; };
-		EF9ACDCF48044E021137D43E /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 4CE9E0A74A0087C448EBA097 /* Sparkle */; };
-		F88ADC87F03A85A650D4E263 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 102D0A30E0FF1A16280C9C02 /* LaunchAtLogin */; };
 		FCE07ECDAD45872C36FD015B /* SmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DDDEB6B006BFE11D4A6D56 /* SmokeTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -149,20 +145,6 @@
 		F85C5707DEE7A8662419FF10 /* OpenAIEnhancerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIEnhancerTests.swift; sourceTree = "<group>"; };
 		FB91B3931261D3E31B2ED053 /* EditorToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorToolbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		7841B02736C98C4AE889EFED /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AFB09D35356B8B0E692072CC /* KeyboardShortcuts in Frameworks */,
-				F88ADC87F03A85A650D4E263 /* LaunchAtLogin in Frameworks */,
-				EF9ACDCF48044E021137D43E /* Sparkle in Frameworks */,
-				8589A2E659B17C3F70AB127F /* Zip in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		0896C32FFBA37AF84891C2AA /* Editor */ = {
@@ -384,7 +366,6 @@
 			buildConfigurationList = 78E37A806E82C16FFDD33F41 /* Build configuration list for PBXNativeTarget "SpeechEditor" */;
 			buildPhases = (
 				2DBF1B92A7BF10B57F86719D /* Sources */,
-				7841B02736C98C4AE889EFED /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -392,10 +373,6 @@
 			);
 			name = SpeechEditor;
 			packageProductDependencies = (
-				6965E28FFC5C7D4CC5C8FB98 /* KeyboardShortcuts */,
-				102D0A30E0FF1A16280C9C02 /* LaunchAtLogin */,
-				4CE9E0A74A0087C448EBA097 /* Sparkle */,
-				0F2A0D3F59E5CC42E5BD4FFC /* Zip */,
 			);
 			productName = SpeechEditor;
 			productReference = 393651094AEACAFB74181C36 /* SpeechEditor.app */;
@@ -460,12 +437,6 @@
 			);
 			mainGroup = 336D7ACF60ECEF1AB34C2849;
 			minimizedProjectReferenceProxies = 1;
-			packageReferences = (
-				698C4248E558BD790F851290 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
-				2803C84207AE959FD21010DB /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
-				33BBF2B239652CEF6519D432 /* XCRemoteSwiftPackageReference "Sparkle" */,
-				38EE362A0183EB97DB35BC46 /* XCRemoteSwiftPackageReference "Zip" */,
-			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 49B35F85098EE9DE31959C6F /* Products */;
 			projectDirPath = "";
@@ -843,64 +814,6 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		2803C84207AE959FD21010DB /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
-			};
-		};
-		33BBF2B239652CEF6519D432 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sparkle-project/Sparkle";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.6.0;
-			};
-		};
-		38EE362A0183EB97DB35BC46 /* XCRemoteSwiftPackageReference "Zip" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/marmelroy/Zip";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.2;
-			};
-		};
-		698C4248E558BD790F851290 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		0F2A0D3F59E5CC42E5BD4FFC /* Zip */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 38EE362A0183EB97DB35BC46 /* XCRemoteSwiftPackageReference "Zip" */;
-			productName = Zip;
-		};
-		102D0A30E0FF1A16280C9C02 /* LaunchAtLogin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2803C84207AE959FD21010DB /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
-			productName = LaunchAtLogin;
-		};
-		4CE9E0A74A0087C448EBA097 /* Sparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 33BBF2B239652CEF6519D432 /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
-		};
-		6965E28FFC5C7D4CC5C8FB98 /* KeyboardShortcuts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 698C4248E558BD790F851290 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
-			productName = KeyboardShortcuts;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AAB7B9A3652A4B148D537DBE /* Project object */;
 }

@@ -27,7 +27,17 @@ Inspired structurally by [VoiceInk](https://github.com/sadiuysal/VoiceInk), but 
   └──────────────────────────────────────────────────────────┘
 ```
 
-> Screenshots are pending a manual capture session (the app needs Microphone / Speech / Accessibility grants to run); see [MANUAL_QA.md](MANUAL_QA.md).
+**The Editor window** (AI actions, editable canvas, undo + Markdown export):
+
+![Speech Editor window](docs/screenshots/editor-window.png)
+
+**The menu-bar menu** (the app runs as an `LSUIElement` agent):
+
+![Menu-bar menu](docs/screenshots/menu.png)
+
+> The floating "Recording…" HUD (shown in the diagram above) appears only while the
+> ⌃ Right-Control hotkey is held, which requires the Accessibility grant — capture it
+> live during the [MANUAL_QA.md](MANUAL_QA.md) pass.
 
 ---
 

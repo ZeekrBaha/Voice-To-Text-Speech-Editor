@@ -30,10 +30,10 @@ final class AppContainer {
         dictation = DictationController(
             capture: AVAudioCaptureService(),
             engine: AppleSpeechEngine(),
-            enhancer: makeEnhancer(),
+            enhancerProvider: { [unowned self] in self.makeEnhancer() },
             sink: CursorPasteSink(),
             vocabulary: vocabulary,
-            settings: settingsStore.settings,
+            settingsProvider: { [unowned self] in self.settingsStore.settings },
             store: editorStore)
         hotkeys = HotkeyManager(
             onStart: { [weak self] in self?.hud.show(); self?.dictation.startRecording() },

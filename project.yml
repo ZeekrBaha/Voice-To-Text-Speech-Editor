@@ -4,19 +4,6 @@ options:
   deploymentTarget:
     macOS: "14.0"
   createIntermediateGroups: true
-packages:
-  KeyboardShortcuts:
-    url: https://github.com/sindresorhus/KeyboardShortcuts
-    from: 2.2.0
-  LaunchAtLogin:
-    url: https://github.com/sindresorhus/LaunchAtLogin-Modern
-    from: 1.1.0
-  Sparkle:
-    url: https://github.com/sparkle-project/Sparkle
-    from: 2.6.0
-  Zip:
-    url: https://github.com/marmelroy/Zip
-    from: 2.1.2
 targets:
   SpeechEditor:
     type: application
@@ -30,11 +17,6 @@ targets:
         MARKETING_VERSION: "0.1.0"
         CURRENT_PROJECT_VERSION: "1"
         SWIFT_VERSION: "5.0"
-    dependencies:
-      - package: KeyboardShortcuts
-      - package: LaunchAtLogin
-      - package: Sparkle
-      - package: Zip
   SpeechEditorTests:
     type: bundle.unit-test
     platform: macOS
