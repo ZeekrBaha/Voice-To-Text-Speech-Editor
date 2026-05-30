@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1FEAA17A7C2873306C970D21 /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84439AC9D9653CCAD58F741 /* Transcript.swift */; };
+		41DA99B6E86125395B561B5A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F9DFD651A4DCAE4C76221 /* Logger.swift */; };
+		5A2DD2BE442DF34474E0457F /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E06E12A7A44FA91F5E7D3D /* AppError.swift */; };
+		6A7FEF8AD102303EC35BA723 /* AppErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11DDDA69C8C0A0B0FE32C3 /* AppErrorTests.swift */; };
 		7A6FD421323E7008B7014CA8 /* TranscriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA29A7465D1E61FE060264 /* TranscriptTests.swift */; };
 		8589A2E659B17C3F70AB127F /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 0F2A0D3F59E5CC42E5BD4FFC /* Zip */; };
 		AA2EC7C6DF154D25D02DFBA2 /* SpeechEditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD20528F93FA19FD72EBEA2 /* SpeechEditorApp.swift */; };
@@ -40,9 +43,12 @@
 /* Begin PBXFileReference section */
 		00C40B0B5C9F1E5928961A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		02C9DA59503D67B0FD2A9EB3 /* VocabularyEntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyEntryTests.swift; sourceTree = "<group>"; };
+		0A11DDDA69C8C0A0B0FE32C3 /* AppErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorTests.swift; sourceTree = "<group>"; };
+		19E06E12A7A44FA91F5E7D3D /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		2DD20528F93FA19FD72EBEA2 /* SpeechEditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechEditorApp.swift; sourceTree = "<group>"; };
 		393651094AEACAFB74181C36 /* SpeechEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeechEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BB81937B1202084B408388 /* SpeechEditorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechEditorUITests.swift; sourceTree = "<group>"; };
+		5C6F9DFD651A4DCAE4C76221 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		76CA29A7465D1E61FE060264 /* TranscriptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptTests.swift; sourceTree = "<group>"; };
 		87DDDEB6B006BFE11D4A6D56 /* SmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokeTests.swift; sourceTree = "<group>"; };
 		A84439AC9D9653CCAD58F741 /* Transcript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
@@ -85,6 +91,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		43BE4BA100FAB4D3CC64DA75 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				19E06E12A7A44FA91F5E7D3D /* AppError.swift */,
+				5C6F9DFD651A4DCAE4C76221 /* Logger.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		49B35F85098EE9DE31959C6F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +117,7 @@
 				A64F268F129BA6435300468D /* App */,
 				CDFE3EF4D9E343F2ED75029C /* Models */,
 				360F32B74FABB62BDF0755EC /* Resources */,
+				43BE4BA100FAB4D3CC64DA75 /* Shared */,
 			);
 			path = SpeechEditor;
 			sourceTree = "<group>";
@@ -125,6 +141,7 @@
 		A79AF071EB345335FF5A2BE7 /* SpeechEditorTests */ = {
 			isa = PBXGroup;
 			children = (
+				0A11DDDA69C8C0A0B0FE32C3 /* AppErrorTests.swift */,
 				87DDDEB6B006BFE11D4A6D56 /* SmokeTests.swift */,
 				76CA29A7465D1E61FE060264 /* TranscriptTests.swift */,
 				02C9DA59503D67B0FD2A9EB3 /* VocabularyEntryTests.swift */,
@@ -256,6 +273,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A2DD2BE442DF34474E0457F /* AppError.swift in Sources */,
+				41DA99B6E86125395B561B5A /* Logger.swift in Sources */,
 				AA2EC7C6DF154D25D02DFBA2 /* SpeechEditorApp.swift in Sources */,
 				1FEAA17A7C2873306C970D21 /* Transcript.swift in Sources */,
 				E45FAD6A15380E26D58E3A56 /* VocabularyEntry.swift in Sources */,
@@ -266,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A7FEF8AD102303EC35BA723 /* AppErrorTests.swift in Sources */,
 				FCE07ECDAD45872C36FD015B /* SmokeTests.swift in Sources */,
 				7A6FD421323E7008B7014CA8 /* TranscriptTests.swift in Sources */,
 				BE51B985DFCF11B01841B9F4 /* VocabularyEntryTests.swift in Sources */,
