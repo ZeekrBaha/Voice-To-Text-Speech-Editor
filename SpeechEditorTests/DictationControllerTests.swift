@@ -10,9 +10,10 @@ struct DictationControllerTests {
         enhancer: FakeTextEnhancer = .init(),
         sink: FakeOutputSink = .init(),
         settings: AppSettings = .default,
-        store: EditorStore = .init()
+        store: EditorStore? = nil
     ) -> DictationController {
-        DictationController(capture: capture, engine: engine,
+        let store = store ?? EditorStore(store: FakeTranscriptStore())
+        return DictationController(capture: capture, engine: engine,
                             enhancerProvider: { enhancer },
                             sink: sink, vocabulary: ["Xcode"],
                             settingsProvider: { settings }, store: store)
@@ -23,7 +24,7 @@ struct DictationControllerTests {
     func happyPath() async throws {
         let engine = FakeTranscriptionEngine(); engine.result = "helo wrld"
         let enhancer = FakeTextEnhancer(); enhancer.cleanResult = "Hello, world."
-        let sink = FakeOutputSink(); let store = EditorStore()
+        let sink = FakeOutputSink(); let store = EditorStore(store: FakeTranscriptStore())
         let c = makeController(engine: engine, enhancer: enhancer, sink: sink, store: store)
         c.startRecording()
         await c.stopRecordingAndProcess()
