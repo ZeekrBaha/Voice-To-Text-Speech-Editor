@@ -50,6 +50,10 @@ final class AppContainer {
         windowManager.showEditor(store: editorStore, enhancer: makeEnhancer(), vocabulary: vocabulary)
     }
 
+    func showOnboarding() {
+        windowManager.showOnboarding(permissions: permissions)
+    }
+
     func requestAllPermissions() {
         Task {
             _ = await permissions.requestMic()

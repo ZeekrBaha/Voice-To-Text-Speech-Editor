@@ -4,6 +4,28 @@ import SwiftUI
 @MainActor
 final class WindowManager {
     private var editorWindow: NSWindow?
+    private var onboardingWindow: NSWindow?
+
+    func showOnboarding(permissions: PermissionsService) {
+        if let w = onboardingWindow {
+            w.makeKeyAndOrderFront(nil)
+            NSApp.activate(ignoringOtherApps: true)
+            return
+        }
+        let view = OnboardingView(permissions: permissions) { [weak self] in
+            self?.onboardingWindow?.close()
+            self?.onboardingWindow = nil
+        }
+        let hosting = NSHostingController(rootView: view)
+        let w = NSWindow(contentViewController: hosting)
+        w.title = "Welcome"
+        w.styleMask = [.titled, .closable]
+        w.isReleasedWhenClosed = false
+        onboardingWindow = w
+        w.center()
+        w.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
+    }
 
     func showEditor(store: EditorStore, enhancer: TextEnhancer, vocabulary: [String]) {
         if let w = editorWindow {

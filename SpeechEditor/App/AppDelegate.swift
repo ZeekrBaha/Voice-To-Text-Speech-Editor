@@ -13,5 +13,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             container.seedForUITest()
             container.showEditor()
         }
+
+        if !CommandLine.arguments.contains("-uiTestSeedEditor"), !container.permissions.isReady {
+            NSApp.setActivationPolicy(.regular) // ensure onboarding window comes to front
+            container.showOnboarding()
+        }
     }
 }
