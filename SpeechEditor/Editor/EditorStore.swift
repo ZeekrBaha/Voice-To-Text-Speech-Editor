@@ -8,6 +8,8 @@ final class EditorStore {
     var currentText: String = ""
     private var history: [String] = []
 
+    nonisolated init() {}
+
     func add(_ t: Transcript) {
         transcripts.append(t)
         pushHistory()
