@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8589A2E659B17C3F70AB127F /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 0F2A0D3F59E5CC42E5BD4FFC /* Zip */; };
+		AA2EC7C6DF154D25D02DFBA2 /* SpeechEditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD20528F93FA19FD72EBEA2 /* SpeechEditorApp.swift */; };
+		AFB09D35356B8B0E692072CC /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 6965E28FFC5C7D4CC5C8FB98 /* KeyboardShortcuts */; };
+		D220F2B748D48C583135EE76 /* SpeechEditorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BB81937B1202084B408388 /* SpeechEditorUITests.swift */; };
+		EF9ACDCF48044E021137D43E /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 4CE9E0A74A0087C448EBA097 /* Sparkle */; };
+		F88ADC87F03A85A650D4E263 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 102D0A30E0FF1A16280C9C02 /* LaunchAtLogin */; };
+		FCE07ECDAD45872C36FD015B /* SmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DDDEB6B006BFE11D4A6D56 /* SmokeTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A7750FFE25E53158C2CEBEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAB7B9A3652A4B148D537DBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37E3A3266B6F3B2C205E6301;
+			remoteInfo = SpeechEditor;
+		};
+		81FB4FCB7CDFDF0C20E38893 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAB7B9A3652A4B148D537DBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37E3A3266B6F3B2C205E6301;
+			remoteInfo = SpeechEditor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00C40B0B5C9F1E5928961A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2DD20528F93FA19FD72EBEA2 /* SpeechEditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechEditorApp.swift; sourceTree = "<group>"; };
+		393651094AEACAFB74181C36 /* SpeechEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeechEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46BB81937B1202084B408388 /* SpeechEditorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechEditorUITests.swift; sourceTree = "<group>"; };
+		87DDDEB6B006BFE11D4A6D56 /* SmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokeTests.swift; sourceTree = "<group>"; };
+		B3B34ED0306F47944361C87A /* SpeechEditorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeechEditorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4154DCA21B013CE3A9FD055 /* SpeechEditor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpeechEditor.entitlements; sourceTree = "<group>"; };
+		EC22565E616C655B3743DC04 /* SpeechEditorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeechEditorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7841B02736C98C4AE889EFED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFB09D35356B8B0E692072CC /* KeyboardShortcuts in Frameworks */,
+				F88ADC87F03A85A650D4E263 /* LaunchAtLogin in Frameworks */,
+				EF9ACDCF48044E021137D43E /* Sparkle in Frameworks */,
+				8589A2E659B17C3F70AB127F /* Zip in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		336D7ACF60ECEF1AB34C2849 = {
+			isa = PBXGroup;
+			children = (
+				6C6111333F71A8B36E925FE9 /* SpeechEditor */,
+				A79AF071EB345335FF5A2BE7 /* SpeechEditorTests */,
+				823A1049F3C38B7A5D4ED68A /* SpeechEditorUITests */,
+				49B35F85098EE9DE31959C6F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		360F32B74FABB62BDF0755EC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				00C40B0B5C9F1E5928961A41 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		49B35F85098EE9DE31959C6F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				393651094AEACAFB74181C36 /* SpeechEditor.app */,
+				B3B34ED0306F47944361C87A /* SpeechEditorTests.xctest */,
+				EC22565E616C655B3743DC04 /* SpeechEditorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C6111333F71A8B36E925FE9 /* SpeechEditor */ = {
+			isa = PBXGroup;
+			children = (
+				B4154DCA21B013CE3A9FD055 /* SpeechEditor.entitlements */,
+				A64F268F129BA6435300468D /* App */,
+				360F32B74FABB62BDF0755EC /* Resources */,
+			);
+			path = SpeechEditor;
+			sourceTree = "<group>";
+		};
+		823A1049F3C38B7A5D4ED68A /* SpeechEditorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				46BB81937B1202084B408388 /* SpeechEditorUITests.swift */,
+			);
+			path = SpeechEditorUITests;
+			sourceTree = "<group>";
+		};
+		A64F268F129BA6435300468D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2DD20528F93FA19FD72EBEA2 /* SpeechEditorApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A79AF071EB345335FF5A2BE7 /* SpeechEditorTests */ = {
+			isa = PBXGroup;
+			children = (
+				87DDDEB6B006BFE11D4A6D56 /* SmokeTests.swift */,
+			);
+			path = SpeechEditorTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37E3A3266B6F3B2C205E6301 /* SpeechEditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78E37A806E82C16FFDD33F41 /* Build configuration list for PBXNativeTarget "SpeechEditor" */;
+			buildPhases = (
+				2DBF1B92A7BF10B57F86719D /* Sources */,
+				7841B02736C98C4AE889EFED /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpeechEditor;
+			packageProductDependencies = (
+				6965E28FFC5C7D4CC5C8FB98 /* KeyboardShortcuts */,
+				102D0A30E0FF1A16280C9C02 /* LaunchAtLogin */,
+				4CE9E0A74A0087C448EBA097 /* Sparkle */,
+				0F2A0D3F59E5CC42E5BD4FFC /* Zip */,
+			);
+			productName = SpeechEditor;
+			productReference = 393651094AEACAFB74181C36 /* SpeechEditor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5200F54EA8BCB4E4E83C2BFC /* SpeechEditorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41B962D8596510953EC9D0E3 /* Build configuration list for PBXNativeTarget "SpeechEditorUITests" */;
+			buildPhases = (
+				054410D0964FF6D4159579C9 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E31064C4896F570FBAD09FAC /* PBXTargetDependency */,
+			);
+			name = SpeechEditorUITests;
+			packageProductDependencies = (
+			);
+			productName = SpeechEditorUITests;
+			productReference = EC22565E616C655B3743DC04 /* SpeechEditorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		7F1CEAD7E6CC44D07DF156D8 /* SpeechEditorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16CA939A2245116A9F86B3CC /* Build configuration list for PBXNativeTarget "SpeechEditorTests" */;
+			buildPhases = (
+				4877862DAA4A511063839F00 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD0843F8B8407590074439B1 /* PBXTargetDependency */,
+			);
+			name = SpeechEditorTests;
+			packageProductDependencies = (
+			);
+			productName = SpeechEditorTests;
+			productReference = B3B34ED0306F47944361C87A /* SpeechEditorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AAB7B9A3652A4B148D537DBE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					5200F54EA8BCB4E4E83C2BFC = {
+						TestTargetID = 37E3A3266B6F3B2C205E6301;
+					};
+				};
+			};
+			buildConfigurationList = D35F9AF745E5986C2E71D7D1 /* Build configuration list for PBXProject "SpeechEditor" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 336D7ACF60ECEF1AB34C2849;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				698C4248E558BD790F851290 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+				2803C84207AE959FD21010DB /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
+				33BBF2B239652CEF6519D432 /* XCRemoteSwiftPackageReference "Sparkle" */,
+				38EE362A0183EB97DB35BC46 /* XCRemoteSwiftPackageReference "Zip" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 49B35F85098EE9DE31959C6F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37E3A3266B6F3B2C205E6301 /* SpeechEditor */,
+				7F1CEAD7E6CC44D07DF156D8 /* SpeechEditorTests */,
+				5200F54EA8BCB4E4E83C2BFC /* SpeechEditorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		054410D0964FF6D4159579C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D220F2B748D48C583135EE76 /* SpeechEditorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DBF1B92A7BF10B57F86719D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA2EC7C6DF154D25D02DFBA2 /* SpeechEditorApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4877862DAA4A511063839F00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCE07ECDAD45872C36FD015B /* SmokeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BD0843F8B8407590074439B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37E3A3266B6F3B2C205E6301 /* SpeechEditor */;
+			targetProxy = 81FB4FCB7CDFDF0C20E38893 /* PBXContainerItemProxy */;
+		};
+		E31064C4896F570FBAD09FAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37E3A3266B6F3B2C205E6301 /* SpeechEditor */;
+			targetProxy = 5A7750FFE25E53158C2CEBEB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1EDBC8DB724DA3442A4127ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.baha.speecheditor.SpeechEditorUITests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = SpeechEditor;
+			};
+			name = Debug;
+		};
+		2AF414DCAE9DB68DCFE92FE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpeechEditor/SpeechEditor.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = SpeechEditor/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baha.speecheditor.SpeechEditor;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3DF60F15BF3C473C5416CEE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		47E09BC974144D0CF41559A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		689A836D96A8CABD64071E4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.baha.speecheditor.SpeechEditorUITests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = SpeechEditor;
+			};
+			name = Release;
+		};
+		6AE3B01B060609434D70050E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpeechEditor/SpeechEditor.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = SpeechEditor/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baha.speecheditor.SpeechEditor;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7EB46A517FDDD8C1F42D7B92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.baha.speecheditor.SpeechEditorTests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpeechEditor.app/Contents/MacOS/SpeechEditor";
+			};
+			name = Release;
+		};
+		E8779E9E6166A19D21C6CF8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.baha.speecheditor.SpeechEditorTests;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpeechEditor.app/Contents/MacOS/SpeechEditor";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16CA939A2245116A9F86B3CC /* Build configuration list for PBXNativeTarget "SpeechEditorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8779E9E6166A19D21C6CF8D /* Debug */,
+				7EB46A517FDDD8C1F42D7B92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		41B962D8596510953EC9D0E3 /* Build configuration list for PBXNativeTarget "SpeechEditorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EDBC8DB724DA3442A4127ED /* Debug */,
+				689A836D96A8CABD64071E4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		78E37A806E82C16FFDD33F41 /* Build configuration list for PBXNativeTarget "SpeechEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AE3B01B060609434D70050E /* Debug */,
+				2AF414DCAE9DB68DCFE92FE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D35F9AF745E5986C2E71D7D1 /* Build configuration list for PBXProject "SpeechEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47E09BC974144D0CF41559A7 /* Debug */,
+				3DF60F15BF3C473C5416CEE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2803C84207AE959FD21010DB /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+		33BBF2B239652CEF6519D432 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.0;
+			};
+		};
+		38EE362A0183EB97DB35BC46 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.2;
+			};
+		};
+		698C4248E558BD790F851290 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0F2A0D3F59E5CC42E5BD4FFC /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 38EE362A0183EB97DB35BC46 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
+		102D0A30E0FF1A16280C9C02 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2803C84207AE959FD21010DB /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
+			productName = LaunchAtLogin;
+		};
+		4CE9E0A74A0087C448EBA097 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33BBF2B239652CEF6519D432 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+		6965E28FFC5C7D4CC5C8FB98 /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 698C4248E558BD790F851290 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = AAB7B9A3652A4B148D537DBE /* Project object */;
+}
